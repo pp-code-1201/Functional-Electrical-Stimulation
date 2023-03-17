@@ -1,0 +1,12 @@
+1.gpio.h init 增加如下代码
+void HAL_GPIO_REMAP_CONFIG(void)
+{
+   __HAL_RCC_AFIO_CLK_ENABLE();
+	 //__HAL_AFIO_REMAP_SWJ_DISABLE();
+   __HAL_AFIO_REMAP_SWJ_NONJTRST();
+   __HAL_AFIO_REMAP_SWJ_NOJTAG();
+}
+
+2.tim3和tim4初始化去掉
+
+3.main.c mcu_init 去掉
